@@ -16,8 +16,16 @@
 </p>
 
 <p align="center">
-  Mute what you don’t want on X. Keep what you care about.<br />
-  A lightweight Chrome extension — no build step, no account, keyword mode works out of the box.
+  Mute what you don’t want on X, Keep what you care about.<br />
+  A lightweight Chrome extension - no account, keyword mode works out of the box.
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/options.png" width="520" alt="HushHush interests setup" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/panel-on-x.png" width="720" alt="HushHush panel on X feed" />
 </p>
 
 ---
@@ -25,16 +33,16 @@
 ## Why HushHush
 
 X timelines get loud fast: spam, dating bait, crypto, rage posts, AI slop.  
-Mute words hide exact matches. HushHush gives you a small panel on the feed so you can mute topics, lock onto interests, and optionally add semantic filtering with your own LLM key.
+Mute words hide exact matches. HushHush gives you a small panel on the feed so you can mute topics in any language, lock onto interests, and optionally add semantic filtering with your own LLM key.
 
 ## Features
 
-1. Floating panel on `x.com` / `twitter.com` (bottom-right)
-2. **Mute** — type a phrase, hit Enter, matching posts get hushed
-3. Rotating placeholder suggestions (FA + EN) so it’s obvious what to mute
-4. **Interests** — keep Game, Programming, AI, Football, سینما, … and hush the rest
+1. Floating panel on `x.com`
+2. **Mute** type a phrase, hit Enter, matching posts get hushed
+3. Rotating placeholder suggestions so it’s obvious what to mute
+4. **Interests** — keep Game, Programming, AI, Football, ... and hush the rest
 5. Works **without** an API key (keyword mode)
-6. Optional AI boost: Groq / OpenAI / OpenRouter / custom endpoint
+6. Optional AI boost: Groq, OpenAI, OpenRouter, custom endpoint
 7. One-click “hush this” on posts when AI is enabled
 8. Theme-aware dark panel that fits X
 
@@ -43,7 +51,8 @@ Mute words hide exact matches. HushHush gives you a small panel on the feed so y
 Anyone can install from this repo in under a minute:
 
 1. **Download**
-   - Click the green **Code** button on GitHub → **Download ZIP**  
+   - Click the green **Code** button on GitHub: **Download ZIP**  
+
    - Or clone:
      ```bash
      git clone https://github.com/yasaminashoori/HushHush.git
@@ -54,19 +63,19 @@ Anyone can install from this repo in under a minute:
    chrome://extensions
    ```
 4. Turn on **Developer mode** (top-right).
-5. Click **Load unpacked** → select the `HushHush` folder.
+5. Click **Load unpacked**: select the `HushHush` folder.
 6. Open [https://x.com](https://x.com) and refresh once.
 
 You should see the **HushHush** panel at the bottom-right of the page.
 
-> Tip: pin the extension from the Chrome puzzle icon so the popup is one click away.
+> TIP: pin the extension from the Chrome puzzle icon so the popup is one click away.
 
 ## How to use
 
 ### Mute noise
 
 1. Open the **Mute** tab on the panel  
-2. Type something you don’t want (e.g. `دیت`, `crypto spam`, `giveaway`)  
+2. Type something you don’t want (e.g. `crypto spam`, `دیت`)  
 3. Press **Enter**  
 4. Scroll your feed — matching posts disappear; the footer shows how many were hushed  
 
@@ -75,7 +84,7 @@ Click **×** on a chip to remove a mute.
 ### Keep interests only
 
 1. Open the **Interests** tab  
-2. Tap presets (Game, Programming, AI, فوتبال, …) or add a custom one  
+2. Tap presets (Game, Programming, AI, …) or add a custom one  
 3. Timeline focuses on those topics; everything else gets hushed  
 
 ### Optional AI (not required)
@@ -84,8 +93,8 @@ Keyword mode is enough for most people. If you want semantic mutes like “engag
 
 1. Open **Settings** from the panel (or the extension options page)  
 2. Expand **Optional AI boost**  
-3. Pick a provider (Groq is the usual free-tier choice)  
-4. Paste your API key → **Test connection** → start on X  
+3. Pick a provider (Groq is the usual free choice)  
+4. Paste your API key: **Test connection** and start on X  
 
 Keys stay in `chrome.storage` on your machine. See [PRIVACY.md](PRIVACY.md).
 
@@ -95,16 +104,6 @@ Keys stay in `chrome.storage` on your machine. See [PRIVACY.md](PRIVACY.md).
 2. `chrome://extensions` → **Reload** on the HushHush card  
 3. Refresh X  
 
-## Project layout
-
-```text
-background/     service worker (messaging + optional LLM)
-content/        feed filter + floating panel
-popup/          toolbar popup
-options/        first-run / settings
-shared/         interest presets
-assets/icons/   logo + Chrome icons
-```
 
 ## Privacy
 
