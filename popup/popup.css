@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 280px;
+  padding: 18px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #0a0a0a;
+  color: #e8e2d6;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #e4d7b8;
+}
+
+.popup-status {
+  font-size: 12.5px;
+  color: #9a9284;
+  line-height: 1.45;
+}
+
+.popup-status.ok {
+  color: #7dba8a;
+}
+
+.popup-btn {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 999px;
+  background: #d2c4a2;
+  color: #141414;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.popup-btn:hover {
+  background: #e4d7b8;
+}
+
+.popup-link {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: #d2c4a2;
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
+}

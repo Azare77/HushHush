@@ -1,0 +1,362 @@
+#hh-root {
+  --hh-bg: #141414;
+  --hh-bg-soft: #1a1a1a;
+  --hh-line: #2c2c2c;
+  --hh-text: #e8e2d6;
+  --hh-muted: #9a9284;
+  --hh-accent: #d2c4a2;
+  --hh-accent-soft: rgba(210, 196, 162, 0.16);
+  --hh-danger: #d96b6b;
+  --hh-radius: 16px;
+  --hh-font: "Segoe UI", Tahoma, "Chirp", sans-serif;
+  all: initial;
+  position: fixed;
+  inset-inline-end: 20px;
+  bottom: 20px;
+  z-index: 2147483000;
+  font-family: var(--hh-font);
+  color: var(--hh-text);
+  direction: ltr;
+}
+
+#hh-root.hh-light {
+  --hh-bg: #f4efe6;
+  --hh-bg-soft: #ebe4d8;
+  --hh-line: #d6cdb8;
+  --hh-text: #1a1a1a;
+  --hh-muted: #6f675a;
+  --hh-accent: #8a7a55;
+  --hh-accent-soft: rgba(138, 122, 85, 0.14);
+}
+
+#hh-root * {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.hh-panel {
+  width: min(340px, calc(100vw - 32px));
+  background: var(--hh-bg);
+  border: 1px solid var(--hh-line);
+  border-radius: var(--hh-radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.hh-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px 8px;
+}
+
+.hh-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--hh-text);
+}
+
+.hh-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hh-header-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.hh-icon-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--hh-muted);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+.hh-icon-btn:hover {
+  background: var(--hh-accent-soft);
+  color: var(--hh-accent);
+}
+
+.hh-body {
+  padding: 4px 14px 14px;
+}
+
+.hh-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: var(--hh-bg-soft);
+  border: 1px solid var(--hh-line);
+  border-radius: 12px;
+  padding: 3px;
+  margin-bottom: 12px;
+}
+
+.hh-tab {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--hh-muted);
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hh-tab.active {
+  background: var(--hh-bg);
+  color: var(--hh-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hh-hint {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--hh-muted);
+  line-height: 1.4;
+}
+
+.hh-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hh-preset {
+  appearance: none;
+  border: 1px solid var(--hh-line);
+  background: var(--hh-bg-soft);
+  color: var(--hh-text);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hh-preset:hover {
+  border-color: var(--hh-accent);
+}
+
+.hh-preset.active {
+  background: var(--hh-accent);
+  border-color: var(--hh-accent);
+  color: #141414;
+}
+
+.hh-input-wrap {
+  position: relative;
+}
+
+.hh-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--hh-line);
+  background: var(--hh-bg-soft);
+  color: var(--hh-text);
+  font-size: 14px;
+  outline: none;
+}
+
+.hh-input:focus {
+  border-color: var(--hh-accent);
+  box-shadow: 0 0 0 3px var(--hh-accent-soft);
+}
+
+.hh-placeholder {
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--hh-muted);
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 28px);
+}
+
+.hh-placeholder.is-fading {
+  opacity: 0;
+}
+
+.hh-placeholder.is-hidden {
+  display: none;
+}
+
+.hh-section-label {
+  margin: 14px 0 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--hh-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hh-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.hh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--hh-accent-soft);
+  color: var(--hh-accent);
+  font-size: 12.5px;
+  line-height: 1.2;
+}
+
+.hh-chip-interest {
+  background: rgba(210, 196, 162, 0.18);
+  color: var(--hh-accent);
+}
+
+.hh-chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hh-chip button {
+  all: unset;
+  cursor: pointer;
+  opacity: 0.7;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.hh-chip button:hover {
+  opacity: 1;
+  color: var(--hh-danger);
+}
+
+.hh-empty {
+  font-size: 12.5px;
+  color: var(--hh-muted);
+}
+
+.hh-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--hh-line);
+}
+
+.hh-link {
+  all: unset;
+  cursor: pointer;
+  color: var(--hh-accent);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.hh-link:hover {
+  text-decoration: underline;
+}
+
+.hh-count {
+  font-size: 12px;
+  color: var(--hh-muted);
+}
+
+.hh-collapsed .hh-body {
+  display: none;
+}
+
+.hh-collapsed .hh-panel {
+  width: auto;
+}
+
+.hh-collapsed .hh-header {
+  padding: 10px 12px;
+}
+
+.hh-bounce-btn {
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 4px 8px;
+  opacity: 0.55;
+  margin-inline-start: 4px;
+}
+
+.hh-bounce-btn:hover {
+  opacity: 1;
+}
+
+.hh-bounce-panel {
+  position: absolute;
+  z-index: 2147483001;
+  background: var(--hh-bg, #16181c);
+  border: 1px solid var(--hh-line, #2f3336);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  width: 260px;
+  font-family: var(--hh-font, "Segoe UI", Tahoma, sans-serif);
+  direction: ltr;
+  color: var(--hh-text, #e7e9ea);
+}
+
+.hh-bounce-panel .hh-bounce-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hh-bounce-panel .hh-reasons {
+  font-size: 12px;
+  color: var(--hh-muted, #71767b);
+}
+
+.hh-reason-btn {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--hh-line, #2f3336);
+  background: var(--hh-bg-soft, #1e2126);
+  color: inherit;
+  cursor: pointer;
+  font-size: 12.5px;
+  text-align: left;
+  margin-top: 6px;
+}
+
+.hh-reason-btn:hover {
+  border-color: var(--hh-accent, #d2c4a2);
+}
+
+[hidden] {
+  display: none !important;
+}

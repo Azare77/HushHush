@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HushHush</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="brand">
+      <img class="logo" src="../assets/icons/logo.png" alt="HushHush" width="72" height="72" />
+      <h1>HushHush</h1>
+      <p class="tagline">Focus is valuable, hush the noise.</p>
+    </header>
+
+    <section class="card">
+      <h2>Interests</h2>
+      <p class="hint">Keep your signal, hush the rest.</p>
+      <div id="interestGrid" class="chip-grid"></div>
+      <div class="custom-row">
+        <input id="customInterest" type="text" placeholder="Add Custom" />
+        <button id="addInterest" type="button">Add</button>
+      </div>
+      <div id="selectedInterests" class="selected"></div>
+    </section>
+
+    <details class="card advanced">
+      <summary>Optional AI boost</summary>
+      <p class="hint">
+        Keyword mode works without a key. Add a provider key only if you want semantic mutes.
+      </p>
+      <label class="field">
+        <span>Model provider</span>
+        <select id="provider">
+          <option value="groq">Groq</option>
+          <option value="openai">OpenAI</option>
+          <option value="openrouter">OpenRouter</option>
+          <option value="custom">Custom endpoint</option>
+        </select>
+      </label>
+      <div id="customFields" class="custom-fields hidden">
+        <label class="field">
+          <span>API URL</span>
+          <input type="url" id="customUrl" placeholder="https://api.example.com/v1/chat/completions" />
+        </label>
+        <label class="field">
+          <span>Model id</span>
+          <input type="text" id="customModel" placeholder="gpt-4o-mini" />
+        </label>
+      </div>
+      <label class="field">
+        <span>API key <em>(optional)</em></span>
+        <input type="password" id="apiKey" placeholder="sk-… / gsk_…" autocomplete="off" />
+      </label>
+      <p id="aiStatus" class="status" role="status"></p>
+      <button type="button" id="testAi" class="ghost-btn">Test connection</button>
+    </details>
+
+    <p id="startStatus" class="status" role="status"></p>
+    <button id="startBtn" type="button" class="primary">Open X &amp; start hushing</button>
+    <p class="foot">No account required. Keyword filtering works offline to your browser.</p>
+  </main>
+  <script src="../shared/interests.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
